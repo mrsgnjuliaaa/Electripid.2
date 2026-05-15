@@ -1,0 +1,1037 @@
+/* Login Page Styles */
+body.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(135deg, #e3f2fd 0%, white 100%);
+}
+
+.auth-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 550px;
+}
+
+.form-section {
+    flex: 1;
+
+    background: #bbdefb;
+
+    padding: 35px 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow-y: auto;
+}
+
+.welcome-section {
+    flex: 1;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)),
+        url('../images/Electripid.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px;
+
+    color: white;
+
+    position: sticky;
+    top: 0;
+
+    overflow: hidden;
+}
+
+.welcome-section h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: #FFFFFF;
+
+    /* SHADOW EFFECT */
+    text-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.35),
+        0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.welcome-section p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.92);
+
+    /* SHADOW EFFECT */
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.35),
+        0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-section .register-link {
+    color: #90caf9;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.welcome-section .register-link:hover {
+    color: #bbdefb;
+}
+
+.form-section h2 {
+    font-size: 3.2rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 35px;
+    text-align: center;
+
+    color: #1E88E5 !important;
+
+    letter-spacing: -1px;
+}
+
+.form-label {
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.form-control,
+.form-select {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.9rem;
+
+    height: 48px;
+}
+
+.mb-compact {
+    margin-bottom: 0.75rem !important;
+}
+
+.logo-icon {
+    background: linear-gradient(135deg, #1e88e5, #0d47a1);
+    width: 70px;
+    height: 70px;
+    font-size: 35px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    color: white;
+}
+
+.eye-toggle {
+    cursor: pointer;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.eye-toggle:hover {
+    color: #1e88e5 !important;
+}
+
+.btn-login {
+    background: #1e88e5;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 20px;
+    color: white;
+}
+
+.btn-login:hover {
+    background: #1565c0;
+    color: white;
+}
+
+.login-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column-reverse;
+    }
+
+    .welcome-section {
+        flex: 1;
+        min-height: 300px;
+    }
+
+    .login-form-container {
+        max-width: 100%;
+    }
+}
+
+/* General Styles */
+body {
+    background: linear-gradient(135deg, #1e88e5, #0d47a1);
+}
+
+.login-card {
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.eye-toggle {
+    cursor: pointer;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.social-btn {
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+}
+
+.social-btn.google {
+    color: #DB4437;
+}
+
+.social-btn.facebook {
+    color: #4267B2;
+}
+
+.auth-card {
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.password-input-group .form-control {
+    padding-right: 45px;
+}
+
+.eye-toggle:hover {
+    color: #495057 !important;
+}
+
+.password-strength {
+    height: 5px;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+.strength-weak {
+    background-color: #dc3545;
+    width: 25%;
+}
+
+.strength-fair {
+    background-color: #ffc107;
+    width: 50%;
+}
+
+.strength-good {
+    background-color: #28a745;
+    width: 75%;
+}
+
+.strength-strong {
+    background-color: #20c997;
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    .login-card {
+        padding: 30px 20px !important;
+    }
+
+    .auth-card {
+        padding: 30px 20px !important;
+    }
+}
+
+/* Dashboard Page Styles */
+:root {
+    --primary-color: #1E88E5;
+    --secondary-color: #6c757d;
+    --success-color: #10B981;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-bg: #E3F2FD;
+}
+
+body {
+    background: linear-gradient(135deg, #1e88e5 0%, #0d47a1 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.dashboard-page {
+    background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+}
+
+/* Navbar Styles */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+}
+
+.nav-icon-btn {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-icon-btn:hover {
+    color: var(--primary-color);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--danger-color);
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 8px;
+}
+
+.dropdown-item {
+    padding: 0.75rem 1.25rem;
+    transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-item i {
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Info Cards */
+.info-card {
+    border-radius: 20px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    border: none;
+    backdrop-filter: blur(6px);
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.10),
+        0 12px 35px rgba(0, 0, 0, 0.08);
+
+    color: white;
+}
+
+.info-card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Weather Widget */
+.weather-widget {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.weather-icon img {
+    width: 60px;
+}
+
+.weather-forecast {
+    overflow-x: auto;
+}
+
+.forecast-day {
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f1f5f9;
+    min-width: 80px;
+}
+
+.forecast-day img {
+    width: 40px;
+}
+
+/* Chart Container */
+.chart-container {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Floating Buttons */
+.floating-btn {
+    position: fixed;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    z-index: 1000;
+}
+
+.floating-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.donation-btn {
+    bottom: 120px;
+    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+}
+
+.chatbot-btn {
+    bottom: 40px;
+    background: linear-gradient(135deg, #00c853 0%, #00a844 100%);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    display: none !important;
+}
+
+.modal-overlay.d-flex {
+    display: flex !important;
+}
+
+.modal-content {
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.chatbot-container {
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.chatbot-header {
+    background: linear-gradient(135deg, #1E88E5 0%, #1565C0 100%);
+    border-radius: 16px 16px 0 0;
+}
+
+.message-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+}
+
+.btn-send {
+    background: linear-gradient(135deg, #1E88E5 0%, #1565C0 100%);
+    border-radius: 10px;
+    width: 48px;
+    height: 48px;
+}
+
+/* Top Consumers Progress Bars */
+.consumer-item {
+    margin-bottom: 16px;
+}
+
+.consumer-item:last-child {
+    margin-bottom: 0;
+}
+
+.consumer-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.consumer-name {
+    font-weight: 600;
+    color: #1e3a5f;
+}
+
+.consumer-percentage {
+    font-weight: 700;
+    color: #1976d2;
+    font-size: 18px;
+}
+
+.progress-bar-custom {
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #e3f2fd;
+}
+
+.progress-bar-custom .progress-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+.progress-bar-custom .progress-fill.green {
+    background: linear-gradient(90deg, #4caf50 0%, #66bb6a 100%);
+}
+
+.progress-bar-custom .progress-fill.purple {
+    background: linear-gradient(90deg, #9c27b0 0%, #ba68c8 100%);
+}
+
+.progress-bar-custom .progress-fill.teal {
+    background: linear-gradient(90deg, #009688 0%, #4db6ac 100%);
+}
+
+/* Appliance Card Styles */
+.appliance-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(25, 118, 210, 0.1);
+}
+
+.appliance-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.appliance-name {
+    font-weight: 600;
+    color: #1e3a5f;
+    font-size: 18px;
+}
+
+.appliance-details {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.appliance-cost {
+    color: #1976d2;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* Input Group Adjustments */
+.input-group {
+    position: relative;
+}
+
+.input-group .d-flex.flex-column {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.input-group .d-flex.flex-column button {
+    padding: 2px 4px;
+    line-height: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .dashboard-page .metric-value {
+        font-size: 36px;
+    }
+
+    .dashboard-page .current-rate-value {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-page .header .d-flex {
+        flex-wrap: wrap;
+    }
+
+    .breadcrumb-nav {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+/* =========================
+   FULL SPLIT SCREEN LOGIN
+========================= */
+
+body.login-page.full-split-screen {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.full-split-screen .auth-container {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* LEFT SIDE */
+.full-split-screen .welcome-section {
+    flex: 1;
+    min-height: 100vh;
+    border-radius: 0;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)),
+        url('../images/Electripid.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 60px;
+    color: white;
+}
+
+/* RIGHT SIDE */
+.full-split-screen .form-section {
+    flex: 1;
+    min-height: 100vh;
+    border-radius: 0;
+    background: #eff5fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+}
+
+/* FORM */
+.full-split-screen .login-form-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .welcome-section,
+    .form-section {
+        width: 100%;
+        min-height: auto;
+        padding: 50px 25px;
+    }
+
+    .welcome-section {
+        position: relative;
+    }
+}
+
+.form-section form {
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* FIX SELECT WIDTH */
+
+.form-select {
+    min-width: 100%;
+    width: 100%;
+    padding-right: 45px;
+}
+
+/* COMPACT REGISTER FORM */
+
+.password-rules {
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.form-label {
+    margin-bottom: 4px;
+}
+
+.form-check {
+    margin-top: 5px !important;
+}
+
+.btn-signup {
+    background: #1e88e5;
+    border: none;
+    height: 50px;
+    padding: 0 20px;
+}
+
+/* PROFILE HOVER EFFECT */
+.user-profile {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 12px;
+}
+
+.user-profile:hover {
+    background-color: rgba(30, 136, 229, 0.12);
+    color: #1E88E5;
+}
+
+.user-profile:hover h6,
+.user-profile:hover p,
+.user-profile:hover span,
+.user-profile:hover i {
+    color: #1E88E5 !important;
+}
+
+/* PROFILE HOVER EFFECT */
+.user-profile {
+    border-radius: 14px;
+    padding: 6px 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.user-profile:hover {
+
+    background: rgba(30, 136, 229, 0.12);
+}
+
+.user-profile:hover i,
+.user-profile:hover .fw-semibold,
+.user-profile:hover .text-muted {
+
+    color: #1E88E5 !important;
+}
+
+/* REMOVE BLACK BORDER */
+.user-profile .btn {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: transparent !important;
+}
+
+.user-profile .btn:focus,
+.user-profile .btn:active,
+.user-profile .btn.show {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: rgba(30, 136, 229, 0.12) !important;
+}
+
+/* ENERGY OVERVIEW CARD */
+.energy-overview-card {
+    border-radius: 18px;
+    background: white;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    height: 100%;
+}
+
+/* FORECAST CONTAINER */
+.forecast-container {
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* FORECAST CHART */
+#forecastChart {
+    width: 100% !important;
+    min-height: 320px !important;
+}
+
+/* DASHBOARD INFO CARDS */
+
+.info-card {
+
+    border-radius: 20px;
+
+    padding: 24px;
+
+    transition: all 0.3s ease;
+
+    border: none;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.10),
+        0 12px 35px rgba(0, 0, 0, 0.08);
+
+    color: white;
+}
+
+/* CARD COLORS */
+
+.info-card:nth-child(1),
+.col-lg-3:nth-child(1) .info-card {
+
+    background: linear-gradient(135deg, #1E88E5, #42A5F5);
+}
+
+.info-card:nth-child(2),
+.col-lg-3:nth-child(2) .info-card {
+
+    background: linear-gradient(135deg, #00BFA5, #26C6DA);
+}
+
+.info-card:nth-child(3),
+.col-lg-3:nth-child(3) .info-card {
+
+    background: linear-gradient(135deg, #7E57C2, #5C6BC0);
+}
+
+.info-card:nth-child(4),
+.col-lg-3:nth-child(4) .info-card {
+
+    background: linear-gradient(135deg, #ff7d55, #FFA726);
+}
+
+/* TEXT COLORS */
+
+.info-card h4,
+.info-card h6,
+.info-card .text-muted {
+
+    color: white !important;
+}
+
+/* ICON BOX */
+
+.info-card-icon {
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.18) !important;
+
+    color: white !important;
+
+    font-size: 1.3rem;
+}
+
+/* HOVER EFFECT */
+
+.info-card:hover {
+
+    transform: translateY(-6px) scale(1.01);
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.18),
+        0 22px 55px rgba(0, 0, 0, 0.12);
+}
+
+/* WEATHER CONTAINER */
+
+.weather-container {
+
+   background: linear-gradient(
+    135deg,
+    #cb3974,
+    #DB2777,
+    #F472B6
+);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 8px 24px rgba(30, 136, 229, 0.12),
+        0 12px 35px rgba(0, 0, 0, 0.08);
+    border: none;
+    overflow: hidden;
+    position: relative;
+}
+
+/* GLASS EFFECT */
+
+.weather-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.15),
+            rgba(255, 255, 255, 0.03));
+    pointer-events: none;
+}
+
+/* WEATHER TEXT */
+
+.weather-container,
+.weather-container .text-muted,
+.weather-container .text-secondary,
+.weather-container .weather-temp,
+.weather-container .weather-location,
+.weather-container .weather-date,
+.weather-container span,
+.weather-container i {
+
+    color: white !important;
+}
+
+/* TEMPERATURE */
+
+.weather-temp {
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: -1px;
+    text-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+/* LOCATION */
+
+.weather-location {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    opacity: 0.95;
+}
+
+/* FORECAST CONTAINER */
+
+.weather-forecast {
+    gap: 14px;
+}
+
+/* FORECAST DAY BOXES */
+
+.weather-forecast>div {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 14px 12px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    min-width: 78px;
+    text-align: center;
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* FORECAST HOVER */
+
+.weather-forecast>div:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow:
+        0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* WEATHER ICON */
+
+.weather-icon img {
+    filter:
+        drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+}
+
+/* WEATHER DETAILS */
+
+.weather-info {
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+    .weather-container {
+        padding: 20px;
+    }
+    .weather-temp {
+        font-size: 2.3rem;
+    }
+    .weather-forecast {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 8px;
+    }
+    .weather-forecast>div {
+        min-width: 72px;
+    }
+}
+
