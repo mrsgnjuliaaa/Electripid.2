@@ -657,7 +657,10 @@
                 return;
             }
             
-            registerBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Creating account...';
+            registerBtn.style.background = '#1565c0';
+
+            registerBtn.innerHTML =
+            '<span class="spinner-border spinner-border-sm me-2 text-light"></span><span style="color:#ffffff;font-weight:700;letter-spacing:1px;">CREATING ACCOUNT...</span>';
             registerBtn.disabled = true;
         });
     </script>

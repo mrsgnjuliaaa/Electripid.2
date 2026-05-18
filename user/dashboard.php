@@ -237,7 +237,7 @@ if ($household_result && $household_result->num_rows > 0) {
 
         <div class="chart-container">
 
-            <h5 class="mb-3">
+            <h3 class="mb-3">
                 <i class="bi bi-list-check me-2"></i>
                 Appliances
 
@@ -248,7 +248,7 @@ if ($household_result && $household_result->num_rows > 0) {
                     0
 
                 </span>
-            </h5>
+            </h3>
 
             <!-- FORM -->
             <div class="row g-3 mb-3">
@@ -353,10 +353,10 @@ if ($household_result && $household_result->num_rows > 0) {
 
         <div class="chart-container energy-overview-card h-100">
 
-            <h5 class="mb-3">
+            <h3 class="mb-3">
                 <i class="bi bi-bar-chart me-2"></i>
                 Energy Overview
-            </h5>
+            </h3>
 
             <p class="text-muted">
                 Predicted cost of your energy consumption
@@ -501,7 +501,7 @@ if ($household_result && $household_result->num_rows > 0) {
     <div class="row g-4">
       <div class="col-lg-8">
         <div class="chart-container forecast-container h-100 d-flex flex-column">
-          <h5 class="mb-3"><i class="bi bi-calendar-check me-2"></i>Monthly Energy Forecast</h5>
+          <h3 class="mb-3"><i class="bi bi-calendar-check me-2"></i>Monthly Energy Forecast</h3>
           <p class="text-muted">Predicted energy usage based on your consumption patterns</p>
           <div class="mt-4 flex-grow-1">
             <canvas id="forecastChart" style="max-height: 300px;"></canvas>
@@ -510,7 +510,7 @@ if ($household_result && $household_result->num_rows > 0) {
       </div>
       <div class="col-lg-4">
         <div class="chart-container h-100 d-flex flex-column">
-          <h5 class="mb-3"><i class="bi bi-lightbulb me-2"></i>Energy Tips & Recommendations</h5>
+          <h3 class="mb-3"><i class="bi bi-lightbulb me-2"></i>Energy Tips & Recommendations</h3>
           <div id="energyTipsContent" class="mt-3 flex-grow-1" style="display: none;">
             <div class="alert alert-info mb-3">
               <i class="bi bi-info-circle me-2"></i>
@@ -995,6 +995,25 @@ if ($household_result && $household_result->num_rows > 0) {
     }
 
     // updateNotificationBadgeCount function removed - now integrated into checkForNotifications
+
+    <?php if (isset($_SESSION['force_password_change'])): ?>
+
+        document.addEventListener(
+            'DOMContentLoaded',
+            function() {
+
+                const modal = new bootstrap.Modal(
+                    document.getElementById(
+                        'forcePasswordModal'
+                    )
+                );
+
+                modal.show();
+            }
+        );
+
+<?php endif; ?>
+
   </script>
 
   <!-- Modular JavaScript Files -->
@@ -1010,6 +1029,59 @@ if ($household_result && $household_result->num_rows > 0) {
   <!-- Bootstrap and Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <?php if (isset($_SESSION['force_password_change'])): ?>
+
+<div class="modal fade"
+     id="forcePasswordModal"
+     tabindex="-1"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content border-0 shadow rounded-4">
+
+            <div class="modal-body text-center p-5">
+
+                <div class="mb-4">
+
+                    <i class="bi bi-shield-lock-fill
+                              text-warning"
+                       style="font-size: 4rem;"></i>
+
+                </div>
+
+                <h3 class="fw-bold mb-3">
+
+                    Password Reset Required
+
+                </h3>
+
+                <p class="text-muted mb-4">
+
+                    For security purposes,
+                    please change your password
+                    immediately.
+
+                </p>
+
+                <a href="settings.php?open_password_modal=1"
+                   class="btn btn-primary px-4 py-2">
+
+                    Continue
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<?php endif; ?>
 
 </body>
 

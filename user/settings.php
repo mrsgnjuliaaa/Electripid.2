@@ -11,7 +11,20 @@
     $user_id_escaped = mysqli_real_escape_string($conn, $user_id);
 
     // Load user data
-    $user_query = "SELECT fname, lname, email, cp_number, city, barangay FROM USER WHERE user_id = '$user_id_escaped'";
+    $user_query = "SELECT
+                        fname,
+                        lname,
+                        email,
+                        cp_number,
+                        city,
+                        barangay,
+                        security_answer_1,
+                        security_answer_2,
+                        security_answer_3,
+                        security_answer_4,
+                        security_answer_5
+                        FROM USER
+                        WHERE user_id = '$user_id_escaped'";
     $user_result = executeQuery($user_query);
     
     if (!$user_result || mysqli_num_rows($user_result) === 0) {
@@ -257,6 +270,61 @@
             box-shadow: none !important;
             background: rgba(30, 136, 229, 0.12) !important;
         }
+        /* CUSTOM NOTIFICATION */
+        .custom-notification {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.45);
+
+            display: none;
+
+            justify-content: center;
+            align-items: center;
+
+            z-index: 99999;
+
+            backdrop-filter: blur(4px);
+        }
+        .custom-notification-content {
+            background: white;
+            width: 400px;
+            max-width: 90%;
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            animation: popupScale 0.3s ease;
+            position: relative;
+            z-index: 100000;
+            pointer-events: auto;
+        }
+        .notification-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+        .notification-icon.success {
+            color: #198754;
+        }
+        #notificationTitle {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        #notificationMessage {
+            color: #6c757d;
+            margin-bottom: 25px;
+        }
+        @keyframes popupScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 <body class="dashboard-page">
@@ -449,6 +517,162 @@
                         <button type="button" class="btn btn-outline-primary change-btn" onclick="openPasswordModal()" title="Change Password">
                             <i class="bi bi-pencil"></i>
                         </button>
+                    </div>
+                    <!-- Security Questions -->
+
+                    <div class="setting-item align-items-start mt-4" id="securityQuestionsSection">
+                        <div class="flex-grow-1">
+                            <h3 class="setting-label">
+                                Security Questions
+                            </h3>
+                            <div class="setting-value mb-4">
+                                Set up your personal recovery questions
+                                for alternative account login access.
+                            </div>
+
+                            <!-- QUESTION 1 -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">
+                                    What is your favorite food?
+                                </label>
+                                <input type="text"
+                                    class="form-control"
+                                    id="security_answer_1"
+
+                                    placeholder="<?php
+                                    echo !empty($user['security_answer_1'])
+                                    ? '••••••••'
+                                    : 'Enter your answer';
+                                    ?>"
+
+                                    <?php
+                                    echo !empty($user['security_answer_1'])
+                                    ? 'readonly'
+                                    : '';
+                                    ?>>
+                            </div>
+
+                            <!-- QUESTION 2 -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">
+                                    What is your favorite color?
+                                </label>
+                                <input type="text"
+                                    class="form-control"
+                                    id="security_answer_2"
+
+                                    placeholder="<?php
+                                    echo !empty($user['security_answer_2'])
+                                    ? '••••••••'
+                                    : 'Enter your answer';
+                                    ?>"
+
+                                    <?php
+                                    echo !empty($user['security_answer_2'])
+                                    ? 'readonly'
+                                    : '';
+                                    ?>>
+                            </div>
+
+                            <!-- QUESTION 3 -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">
+                                    What city were you born in?
+                                </label>
+                                <input type="text"
+                                    class="form-control"
+                                    id="security_answer_3"
+
+                                    placeholder="<?php
+                                    echo !empty($user['security_answer_3'])
+                                    ? '••••••••'
+                                    : 'Enter your answer';
+                                    ?>"
+
+                                    <?php
+                                    echo !empty($user['security_answer_3'])
+                                    ? 'readonly'
+                                    : '';
+                                    ?>>
+                            </div>
+
+                            <!-- QUESTION 4 -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">
+                                    What is your first pet's name?
+                                </label>
+                                <input type="text"
+                                    class="form-control"
+                                    id="security_answer_4"
+
+                                    placeholder="<?php
+                                    echo !empty($user['security_answer_4'])
+                                    ? '••••••••'
+                                    : 'Enter your answer';
+                                    ?>"
+
+                                    <?php
+                                    echo !empty($user['security_answer_4'])
+                                    ? 'readonly'
+                                    : '';
+                                    ?>>
+                            </div>
+
+                            <!-- QUESTION 5 -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    What is your childhood nickname?
+                                </label>
+                                <input type="text"
+                                    class="form-control"
+                                    id="security_answer_5"
+
+                                    placeholder="<?php
+                                    echo !empty($user['security_answer_5'])
+                                    ? '••••••••'
+                                    : 'Enter your answer';
+                                    ?>"
+
+                                    <?php
+                                    echo !empty($user['security_answer_5'])
+                                    ? 'readonly'
+                                    : '';
+                                    ?>>
+                            </div>
+
+                            <!-- SAVE BUTTON -->
+                            <button type="button"
+                                    class="btn btn-primary"
+                                    id="saveSecurityBtn"
+                                    onclick="saveSecurityQuestions()"
+
+                                    style="<?php
+                                    echo !empty($user['security_answer_1'])
+                                    ? 'display:none;'
+                                    : '';
+                                    ?>">
+
+                                <i class="bi bi-shield-check me-2"></i>
+
+                                Save Security Questions
+
+                            </button>
+                            
+                            <?php if (
+                            !empty($user['security_answer_1']) ||
+                            !empty($user['security_answer_2']) ||
+                            !empty($user['security_answer_3']) ||
+                            !empty($user['security_answer_4']) ||
+                            !empty($user['security_answer_5'])
+                            ): ?>
+                            <button type="button"
+                                    class="btn btn-outline-primary ms-2"
+                                    onclick="enableSecurityAnswerEdit()">
+                                <i class="bi bi-pencil-square me-2"></i>
+                                Edit Answers
+                            </button>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -923,7 +1147,7 @@
             const toggle = document.getElementById(toggleId);
             const input = document.getElementById(inputId);
             if (toggle && input) {
-                toggle.addEventListener('click', function() {
+                toggle.onclick = function() {
                     if (input.type === 'password') {
                         input.type = 'text';
                         toggle.querySelector('i').classList.remove('bi-eye');
@@ -933,7 +1157,7 @@
                         toggle.querySelector('i').classList.remove('bi-eye-slash');
                         toggle.querySelector('i').classList.add('bi-eye');
                     }
-                });
+                };
             }
         }
 
@@ -1420,10 +1644,45 @@
                 const result = await response.json();
                 
                 if (result.success) {
-                    alertDiv.innerHTML = '<div class="alert alert-success"><i class="bi bi-check-circle me-2"></i>Password updated successfully!</div>';
-                    setTimeout(() => {
-                        location.reload();
-                    }, 1000);
+
+                    const passwordModal =
+                    bootstrap.Modal.getInstance(
+                        document.getElementById(
+                            'passwordModal'
+                        )
+                    );
+
+                    if (passwordModal) {
+
+                        passwordModal.hide();
+
+                        document.body.classList.remove(
+                            'modal-open'
+                        );
+
+                        const backdrops =
+                        document.querySelectorAll(
+                            '.modal-backdrop'
+                        );
+
+                        backdrops.forEach(backdrop => {
+                            backdrop.remove();
+                        });
+
+                    }
+
+                    showCustomNotification(
+                        'success',
+                        'Password Updated',
+                        'Your password has been changed successfully.'
+                    );
+
+                    window.history.replaceState(
+                        {},
+                        document.title,
+                        'settings.php'
+                    );
+
                 } else {
                     alertDiv.innerHTML = `<div class="alert alert-danger"><i class="bi bi-exclamation-triangle me-2"></i>${result.error || 'Failed to update password.'}</div>`;
                     saveBtn.disabled = false;
@@ -1530,6 +1789,289 @@
             this.value = value;
         });
 
+        async function saveSecurityQuestions() {
+
+            const answer1 =
+                document.getElementById('security_answer_1').value.trim();
+
+            const answer2 =
+                document.getElementById('security_answer_2').value.trim();
+
+            const answer3 =
+                document.getElementById('security_answer_3').value.trim();
+
+            const answer4 =
+                document.getElementById('security_answer_4').value.trim();
+
+            const answer5 =
+                document.getElementById('security_answer_5').value.trim();
+
+            if (
+                !answer1 ||
+                !answer2 ||
+                !answer3 ||
+                !answer4 ||
+                !answer5
+            ) {
+
+                showNotification(
+                    'Success',
+                    'Security questions saved successfully!'
+                );
+                return;
+            }
+
+            try {
+                const response = await fetch(
+                    'settings/save_security_questions.php',
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            answer1,
+                            answer2,
+                            answer3,
+                            answer4,
+                            answer5
+                        })
+                    }
+                );
+
+                const result = await response.json();
+                if (result.success) {
+                    showNotification(
+                        'Security Questions Saved',
+                        'Your recovery answers have been saved successfully.',
+                        true
+                    );
+                } else {
+                    alert(
+                        result.error ||
+                        'Failed to save security questions.'
+                    );
+                }
+            } catch (error) {
+
+                console.error(error);
+
+                showCustomNotification(
+                    'error',
+                    'Save Failed',
+                    error.message
+                );
+
+                return;
+            }
+        }
+
+        function enableSecurityAnswerEdit() {
+
+            const inputs = [
+
+                'security_answer_1',
+                'security_answer_2',
+                'security_answer_3',
+                'security_answer_4',
+                'security_answer_5'
+
+            ];
+
+            inputs.forEach(id => {
+
+                const input =
+                document.getElementById(id);
+                input.removeAttribute('readonly');
+                input.value = '';
+                input.placeholder =
+                    'Enter new answer';
+            });
+
+            document.getElementById(
+                'saveSecurityBtn'
+            ).style.display = 'inline-block';
+
+            showNotification(
+                'Edit Mode Enabled',
+                'You can now edit your security answers.'
+            );
+        }
+
+        function showNotification(
+            title,
+            message,
+            reload = false
+        ) {
+
+            document.getElementById(
+                'notificationTitle'
+            ).innerText = title;
+
+            document.getElementById(
+                'notificationMessage'
+            ).innerText = message;
+
+            document.getElementById(
+                'customNotification'
+            ).style.display = 'flex';
+
+            const okBtn =
+            document.getElementById(
+                'notificationOkBtn'
+            );
+
+            okBtn.onclick = function() {
+
+                closeNotification();
+
+                if (reload) {
+
+                    const inputs = [
+
+                        'security_answer_1',
+                        'security_answer_2',
+                        'security_answer_3',
+                        'security_answer_4',
+                        'security_answer_5'
+
+                    ];
+
+                    inputs.forEach(id => {
+
+                        const input =
+                        document.getElementById(id);
+
+                        input.setAttribute(
+                            'readonly',
+                            true
+                        );
+
+                    });
+
+                    document.getElementById(
+                        'saveSecurityBtn'
+                    ).style.display = 'none';
+
+                    document.getElementById(
+                        'securityQuestionsSection'
+                    ).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                }
+            };
+        }
+
+        function closeNotification() {
+            document.getElementById(
+                'customNotification'
+            ).style.display = 'none';
+        }
+
+        function showCustomNotification(
+            type,
+            title,
+            message
+        ) {
+
+            const notification =
+            document.getElementById(
+                'customNotification'
+            );
+
+            const icon =
+            document.getElementById(
+                'notificationIcon'
+            );
+
+            const titleEl =
+            document.getElementById(
+                'notificationTitle'
+            );
+
+            const messageEl =
+            document.getElementById(
+                'notificationMessage'
+            );
+
+            if (type === 'success') {
+
+                icon.className =
+                'bi bi-check-circle-fill notification-icon success';
+
+            } else {
+
+                icon.className =
+                'bi bi-x-circle-fill notification-icon text-danger';
+
+            }
+
+            titleEl.textContent = title;
+            messageEl.textContent = message;
+            notification.style.cssText = `
+                display: flex;
+                position: fixed;
+                z-index: 999999 !important;
+            `;
+        }
+
     </script>
+
+    <?php if (
+    isset($_GET['open_password_modal']) &&
+    $_GET['open_password_modal'] == '1'
+    ): ?>
+
+    <script>
+
+    document.addEventListener(
+        'DOMContentLoaded',
+        function() {
+
+            openPasswordModal();
+
+        }
+    );
+
+    </script>
+
+    <?php endif; ?>
+
+    <div class="custom-notification"
+        id="customNotification">
+
+        <div class="custom-notification-content">
+
+            <i id="notificationIcon"
+            class="bi bi-check-circle-fill
+                    notification-icon success"></i>
+
+            <h4 id="notificationTitle">
+                Success
+            </h4>
+
+            <p id="notificationMessage">
+                Action completed successfully.
+            </p>
+
+            <button class="btn btn-success px-4"
+                    id="notificationOkBtn"
+                    style="position:relative; z-index:999999;"
+                    onclick="
+                    document.getElementById(
+                    'customNotification'
+                    ).style.display='none'
+                    ">
+
+                OK
+
+            </button>
+
+        </div>
+
+    </div>
+
 </body>
 </html>

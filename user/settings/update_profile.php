@@ -116,6 +116,8 @@
         response(['success' => false, 'error' => 'Failed to update profile.']);
     }
 
+    unset($_SESSION['force_password_change']);
+
     if ($provider_id > 0) {
         $provider_id_escaped = mysqli_real_escape_string($conn, $provider_id);
         $check_household_query = "SELECT household_id FROM HOUSEHOLD WHERE user_id = '$user_id_escaped'";

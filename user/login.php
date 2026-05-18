@@ -6,6 +6,11 @@ require_once 'verification/email/phpmailer.php';
 $error_message = '';
 $success_message = '';
 
+if (!isset($_SESSION['login_attempts'])) {
+
+    $_SESSION['login_attempts'] = 0;
+}
+
 if (isset($_SESSION['user_id'])) {
     if ($_SESSION['role'] === 'admin') {
         header('Location: ../admin/dashboard.php');
@@ -76,6 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $_SESSION['lname'] = $user['lname'];
                         $_SESSION['email'] = $user['email'];
                         $_SESSION['role'] = $user['role'];
+                        
+                        $_SESSION['login_attempts'] = 0;
 
                         if ($remember) {
                             setcookie('remember_token', base64_encode($user['user_id'] . ':' . hash('sha256', $user['password'])), time() + (30 * 24 * 60 * 60), '/');
@@ -90,11 +97,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         exit;
                     }
                 } else {
-                    $error_message = 'Invalid email or password.';
+                    $_SESSION['login_attempts']++;
+                        $_SESSION['recovery_email'] = $email;
+                        $remaining_attempts =
+                        3 - $_SESSION['login_attempts'];
+                        if ($_SESSION['login_attempts'] >= 3) {
+                            $error_message =
+                            'Too many failed login attempts. Use Security Question Recovery below.';
+                        } else {
+                            $error_message =
+                            'Invalid email or password. Remaining attempts: '
+                            . $remaining_attempts;
+                        }
                 }
             }
         } else {
-            $error_message = 'Invalid email or password.';
+            $_SESSION['login_attempts']++;
+                        $_SESSION['recovery_email'] = $email;
+                        $remaining_attempts =
+                        3 - $_SESSION['login_attempts'];
+                    if ($_SESSION['login_attempts'] >= 3) {
+                        $error_message =
+                        'Too many failed login attempts. Use Security Question Recovery below.';
+                    } else {
+                        $error_message =
+                        'Invalid email or password. Remaining attempts: '
+                        . $remaining_attempts;
+                    }
         }
     }
 }
@@ -159,6 +188,8 @@ if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_token'])) {
                     $_SESSION['lname'] = $user['lname'];
                     $_SESSION['email'] = $user['email'];
                     $_SESSION['role'] = $user['role'];
+                    
+                    $_SESSION['login_attempts'] = 0;
 
                     // Redirect based on role
                     if ($user['role'] === 'admin') {
@@ -273,6 +304,20 @@ if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_token'])) {
                             Forgot password?
                         </a>
                     </div>
+
+                    <?php if (
+                    isset($_SESSION['recovery_email']) &&
+                    $_SESSION['login_attempts'] >= 3
+                    ): ?>
+
+                        <div class="text-center mt-3">
+                            <a href="security_question_login.php"
+                            class="btn btn-outline-danger w-100">
+                                <i class="bi bi-shield-lock me-2"></i>
+                                Use Security Question Recovery
+                            </a>
+                        </div>
+                        <?php endif; ?>
 
                     <button type="submit" class="btn btn-login" id="loginBtn">
                         Log in
