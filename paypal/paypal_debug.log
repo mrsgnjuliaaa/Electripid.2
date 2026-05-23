@@ -15,3 +15,38 @@
 [2026-05-15 11:52:26] cURL Error: 
 [2026-05-15 11:52:26] Response: {"id":"1X694809T3794700X","status":"CREATED","links":[{"href":"https://api.sandbox.paypal.com/v2/checkout/orders/1X694809T3794700X","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/checkoutnow?token=1X694809T3794700X","rel":"approve","method":"GET"},{"href":"https://api.sandbox.paypal.com/v2/checkout/orders/1X694809T3794700X","rel":"update","method":"PATCH"},{"href":"https://api.sandbox.paypal.com/v2/checkout/orders/1X694809T3794700X/capture","rel":"capture","method":"POST"}]}
 [2026-05-15 11:52:26] Order created successfully: 1X694809T3794700X
+[2026-05-19 07:16:10] === PayPal Request Started ===
+[2026-05-19 07:16:10] Request URI: /Electripid/paypal/paypal.php?action=create
+[2026-05-19 07:16:10] Request Method: POST
+[2026-05-19 07:16:10] config.php loaded
+[2026-05-19 13:16:10] connect.php loaded
+[2026-05-19 13:16:10] Action: create
+[2026-05-19 13:16:10] Raw Input: {"amount":"8.47"}
+[2026-05-19 13:16:10] Decoded Input: {"amount":"8.47"}
+[2026-05-19 13:16:10] CREATE ORDER action
+[2026-05-19 13:16:10] Amount received: 8.47
+[2026-05-19 13:16:10] Getting PayPal access token...
+[2026-05-19 13:16:12] Access token obtained: A21AAJFJ1uFlDacQM5ql...
+[2026-05-19 13:16:12] Order data: {"intent":"CAPTURE","purchase_units":[{"amount":{"currency_code":"USD","value":"8.47"},"description":"Donation to Electripid"}],"application_context":{"brand_name":"Electripid","shipping_preference":"NO_SHIPPING"}}
+[2026-05-19 13:16:14] HTTP Code: 201
+[2026-05-19 13:16:14] cURL Error: 
+[2026-05-19 13:16:14] Response: {"id":"5HK278506V9938923","status":"CREATED","links":[{"href":"https://api.sandbox.paypal.com/v2/checkout/orders/5HK278506V9938923","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/checkoutnow?token=5HK278506V9938923","rel":"approve","method":"GET"},{"href":"https://api.sandbox.paypal.com/v2/checkout/orders/5HK278506V9938923","rel":"update","method":"PATCH"},{"href":"https://api.sandbox.paypal.com/v2/checkout/orders/5HK278506V9938923/capture","rel":"capture","method":"POST"}]}
+[2026-05-19 13:16:14] Order created successfully: 5HK278506V9938923
+[2026-05-19 07:16:40] === PayPal Request Started ===
+[2026-05-19 07:16:40] Request URI: /Electripid/paypal/paypal.php?action=capture
+[2026-05-19 07:16:40] Request Method: POST
+[2026-05-19 07:16:40] config.php loaded
+[2026-05-19 13:16:40] connect.php loaded
+[2026-05-19 13:16:40] Action: capture
+[2026-05-19 13:16:40] Raw Input: {"orderID":"5HK278506V9938923","phpAmount":500}
+[2026-05-19 13:16:40] Decoded Input: {"orderID":"5HK278506V9938923","phpAmount":500}
+[2026-05-19 13:16:40] CAPTURE action
+[2026-05-19 13:16:40] Order ID: 5HK278506V9938923
+[2026-05-19 13:16:40] PHP Amount: 500
+[2026-05-19 13:16:45] Capture HTTP Code: 201
+[2026-05-19 13:16:45] Capture Response: {"id":"5HK278506V9938923","status":"COMPLETED","payment_source":{"paypal":{"email_address":"sb-tgdx947806170@personal.example.com","account_id":"8TG76UR7G7PKJ","account_status":"VERIFIED","name":{"given_name":"John","surname":"Doe"},"address":{"country_code":"PH"}}},"purchase_units":[{"reference_id":"default","payments":{"captures":[{"id":"9NG10835HF7176219","status":"COMPLETED","amount":{"currency_code":"USD","value":"8.47"},"final_capture":true,"seller_protection":{"status":"ELIGIBLE","dispute_categories":["ITEM_NOT_RECEIVED","UNAUTHORIZED_TRANSACTION"]},"seller_receivable_breakdown":{"gross_amount":{"currency_code":"USD","value":"8.47"},"paypal_fee":{"currency_code":"USD","value":"0.59"},"net_amount":{"currency_code":"USD","value":"7.88"},"receivable_amount":{"currency_code":"PHP","value":"464.03"},"exchange_rate":{"source_currency":"USD","target_currency":"PHP","value":"58.8871725"}},"links":[{"href":"https://api.sandbox.paypal.com/v2/payments/captures/9NG10835HF7176219","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v2/payments/captures/9NG10835HF7176219/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v2/checkout/orders/5HK278506V9938923","rel":"up","method":"GET"}],"create_time":"2026-05-19T05:16:32Z","update_time":"2026-05-19T05:16:32Z"}]}}],"payer":{"name":{"given_name":"John","surname":"Doe"},"email_address":"sb-tgdx947806170@personal.example.com","payer_id":"8TG76UR7G7PKJ","address":{"country_code":"PH"}},"links":[{"href":"https://api.sandbox.paypal.com/v2/checkout/orders/5HK278506V9938923","rel":"self","method":"GET"}]}
+[2026-05-19 13:16:45] User ID from session: 6
+[2026-05-19 13:16:45] Saving to database - User: 6, Amount: 500, Reference: 9NG10835HF7176219
+[2026-05-19 13:16:45] Database insert successful
+[2026-05-19 13:16:45] Notification created
+[2026-05-19 13:16:45] Capture completed successfully

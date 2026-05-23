@@ -739,7 +739,646 @@ body {
 
     background: rgba(30, 136, 229, 0.12) !important;
 }
-  
+
+/* MODERN DASHBOARD STAT CARDS */
+
+.modern-stat-card {
+
+    position: relative;
+
+    background: rgba(255,255,255,0.95);
+
+    border-radius: 22px;
+
+    padding: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+    0 8px 24px rgba(0,0,0,0.08);
+
+    transition: all 0.3s ease;
+}
+
+.modern-stat-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+    0 12px 28px rgba(0,0,0,0.12);
+}
+
+.modern-stat-card::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 6px;
+    height: 100%;
+
+    border-radius: 20px;
+}
+
+        /* USERS CARD */
+
+        .users-card::before {
+
+            background: #10B981;
+        }
+
+        .users-card {
+
+            background:
+            linear-gradient(
+                135deg,
+                rgba(16,185,129,0.08),
+                rgba(255,255,255,1)
+            );
+        }
+
+        /* ACTIVE CARD */
+
+        .active-card::before {
+
+            background: #8B5CF6;
+        }
+
+        .active-card {
+
+            background:
+            linear-gradient(
+                135deg,
+                rgba(30,136,229,0.08),
+                rgba(255,255,255,1)
+            );
+        }
+
+        /* ICON */
+
+        .stat-icon {
+
+            width: 78px;
+            height: 78px;
+
+            border-radius: 22px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 2rem;
+
+            color: white;
+
+            box-shadow:
+            0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .users-icon {
+
+            background:
+            linear-gradient(
+                135deg,
+                #10B981,
+                #033c2a
+            );
+        }
+
+        .active-icon {
+
+            background:
+            linear-gradient(
+                135deg,
+                #8B5CF6,
+                #6D28D9
+            );
+        }
+
+        /* TEXT */
+
+        .stat-content h6 {
+
+            margin: 0;
+
+            color: #6c757d;
+
+            font-size: 1rem;
+
+            font-weight: 600;
+        }
+
+        .stat-content h2 {
+
+            margin-top: 8px;
+
+            font-size: 2.5rem;
+
+            font-weight: 700;
+
+            color: #1e293b;
+        }
+
+        /* MODERN USERS TABLE */
+
+    .chart-container {
+
+        background: rgba(255,255,255,0.95);
+
+        border-radius: 24px;
+
+        padding: 28px;
+
+        box-shadow:
+        0 8px 24px rgba(0,0,0,0.08);
+
+        border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    /* SEARCH */
+
+    #searchUsers {
+
+        border-radius: 14px;
+
+        border: 1px solid #dbe3ec;
+
+        padding: 12px 16px;
+
+        font-size: 0.95rem;
+
+        background: #f8fbff;
+
+        transition: all 0.3s ease;
+    }
+
+    #searchUsers:focus {
+
+        background: white;
+
+        border-color: #1E88E5;
+
+        box-shadow:
+        0 0 0 4px rgba(30,136,229,0.12);
+    }
+
+    /* TABLE */
+
+    .table {
+
+        border-collapse: separate;
+
+        border-spacing: 0 14px;
+    }
+
+    /* TABLE HEADER */
+
+    .table thead th {
+
+        background: transparent !important;
+
+        border: none !important;
+
+        color: #64748b;
+
+        font-size: 0.78rem;
+
+        font-weight: 700;
+
+        letter-spacing: 1px;
+
+        text-transform: uppercase;
+
+        padding-bottom: 10px;
+    }
+
+    /* TABLE ROW */
+
+    .table tbody tr {
+
+        background: white;
+
+        box-shadow:
+        0 2px 10px rgba(0,0,0,0.04);
+
+        transition: all 0.3s ease;
+
+        border-radius: 18px;
+    }
+
+    .table tbody tr:hover {
+
+        transform: translateY(-3px);
+
+        box-shadow:
+        0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    /* TABLE CELLS */
+
+    .table tbody td {
+
+        padding: 18px 14px;
+
+        border-top: none !important;
+
+        border-bottom: none !important;
+
+        vertical-align: middle;
+    }
+
+    /* ROUNDED ROW EFFECT */
+
+    .table tbody tr td:first-child {
+
+        border-top-left-radius: 18px;
+
+        border-bottom-left-radius: 18px;
+    }
+
+    .table tbody tr td:last-child {
+
+        border-top-right-radius: 18px;
+
+        border-bottom-right-radius: 18px;
+    }
+
+    /* BADGES */
+
+    .badge {
+
+        padding: 8px 14px;
+
+        border-radius: 999px;
+
+        font-size: 0.75rem;
+
+        font-weight: 700;
+    }
+
+    /* ACTION BUTTON */
+
+    .change-btn {
+
+        width: 42px;
+
+        height: 42px;
+
+        border-radius: 14px !important;
+
+        border: none !important;
+
+        background: #f1f5f9 !important;
+
+        color: #475569 !important;
+
+        transition: all 0.3s ease;
+    }
+
+    .change-btn:hover {
+
+        background: #1E88E5 !important;
+
+        color: white !important;
+
+        transform: scale(1.08);
+    }
+
+    /* ===== MODERN DONATION DASHBOARD ===== */
+
+    .modern-donation-card {
+
+        position: relative;
+
+        overflow: hidden;
+
+        border-radius: 24px;
+
+        padding: 28px;
+
+        background: rgba(255,255,255,0.96);
+
+        box-shadow:
+        0 8px 24px rgba(0,0,0,0.08);
+
+        transition: all 0.3s ease;
+
+        flex: 1;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+    }
+
+    .modern-donation-card:hover {
+
+        transform: translateY(-5px);
+
+        box-shadow:
+        0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    .modern-donation-card::before {
+
+        content: '';
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 6px;
+        height: 100%;
+    }
+
+    /* TOTAL DONATION */
+
+    .total-donation-card::before {
+
+        background: #10B981;
+    }
+
+    .total-donation-card {
+
+        background:
+        linear-gradient(
+            135deg,
+            rgba(16,185,129,0.08),
+            rgba(255,255,255,1)
+        );
+    }
+
+    /* TOTAL DONORS */
+
+    .total-donors-card::before {
+
+        background: #8B5CF6;
+    }
+
+    .total-donors-card {
+
+        background:
+        linear-gradient(
+            135deg,
+            rgba(139,92,246,0.08),
+            rgba(255,255,255,1)
+        );
+    }
+
+    /* ICON */
+
+    .donation-icon {
+
+        width: 78px;
+        height: 78px;
+
+        border-radius: 22px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        font-size: 2rem;
+
+        color: white;
+
+        margin-bottom: 22px;
+
+        box-shadow:
+        0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .money-icon {
+
+        background:
+        linear-gradient(
+            135deg,
+            #10B981,
+            #059669
+        );
+    }
+
+    .donor-icon {
+
+        background:
+        linear-gradient(
+            135deg,
+            #8B5CF6,
+            #6D28D9
+        );
+    }
+
+    /* TEXT */
+
+    .modern-donation-card h6 {
+
+        color: #64748b;
+
+        font-size: 1rem;
+
+        font-weight: 600;
+
+        margin-bottom: 8px;
+    }
+
+    .modern-donation-card h2 {
+
+        font-size: 3rem;
+
+        font-weight: 800;
+
+        color: #0f172a;
+
+        margin: 0;
+    }
+
+    /* CHART CARD */
+
+    .modern-chart-card {
+
+        background: rgba(255,255,255,0.96);
+
+        border-radius: 28px;
+
+        padding: 28px;
+
+        min-height: 444px;
+
+        position: relative;
+
+        overflow: hidden;
+
+        box-shadow:
+        0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .modern-chart-card::after {
+
+        content: '';
+
+        position: absolute;
+
+        bottom: -80px;
+        right: -80px;
+
+        width: 320px;
+        height: 320px;
+
+        background:
+        radial-gradient(
+            rgba(139,92,246,0.08),
+            transparent
+        );
+
+        border-radius: 50%;
+    }
+
+    .chart-title {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        font-size: 2rem;
+
+        font-weight: 700;
+
+        color: #0f172a;
+    }
+
+    .chart-title i {
+
+        color: #8B5CF6;
+    }
+
+    /* DONORS TABLE */
+
+    .modern-donors-table {
+
+        background: rgba(255,255,255,0.96);
+
+        border-radius: 28px;
+
+        padding: 28px;
+
+        box-shadow:
+        0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .modern-donors-table h5 {
+
+        font-size: 2rem;
+
+        font-weight: 700;
+
+        color: #0f172a;
+
+        margin-bottom: 24px;
+    }
+
+    .modern-donors-table h5 i {
+
+        color: #8B5CF6;
+    }
+
+    /* MODERN TABLE */
+
+    .modern-donors-table .table {
+
+        border-collapse: separate;
+
+        border-spacing: 0 16px;
+    }
+
+    .modern-donors-table thead th {
+
+        background:
+        rgba(139,92,246,0.06);
+
+        border: none !important;
+
+        padding: 18px;
+
+        color: #64748b;
+
+        font-size: 0.8rem;
+
+        letter-spacing: 1px;
+
+        font-weight: 700;
+
+        text-transform: uppercase;
+    }
+
+    .modern-donors-table tbody tr {
+
+        background: white;
+
+        box-shadow:
+        0 4px 14px rgba(0,0,0,0.05);
+
+        transition: all 0.3s ease;
+    }
+
+    .modern-donors-table tbody tr:hover {
+
+        transform: translateY(-4px);
+
+        box-shadow:
+        0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .modern-donors-table tbody td {
+
+        padding: 22px 18px;
+
+        border: none !important;
+
+        vertical-align: middle;
+
+        font-size: 1rem;
+    }
+
+    .modern-donors-table tbody tr td:first-child {
+
+        border-top-left-radius: 18px;
+
+        border-bottom-left-radius: 18px;
+    }
+
+    .modern-donors-table tbody tr td:last-child {
+
+        border-top-right-radius: 18px;
+
+        border-bottom-right-radius: 18px;
+    }
+
+    .donation-cards-wrapper {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 16px;
+
+        height: 444px;
+    }
+
 </style>
 </head>
 
@@ -803,37 +1442,54 @@ body {
 <?php if ($page === 'users'): ?>
 <!-- ================= USERS VIEW ================= -->
 
-<div class="row g-3 mb-4">
-  <div class="col-6">
-    <div class="card h-100 border-0 shadow-sm">
-      <div class="card-body p-3">
-        <div class="d-flex align-items-center mb-2">
-          <div class="rounded-3 p-2 me-3" style="background: rgba(16, 185, 129, 0.1);">
-            <i class="bi bi-people-fill text-success fs-4"></i>
-          </div>
-          <div>
-            <h6 class="text-muted mb-1 small">Total Users</h6>
-            <h4 class="mb-0 fw-bold"><?= $totalUsers ?></h4>
-          </div>
+<div class="row g-4 mb-4">
+
+    <!-- TOTAL USERS -->
+    <div class="col-md-6">
+
+        <div class="modern-stat-card users-card">
+
+            <div class="stat-icon users-icon">
+
+                <i class="bi bi-people-fill"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <h6>Total Users</h6>
+
+                <h2><?= $totalUsers ?></h2>
+
+            </div>
+
         </div>
-      </div>
+
     </div>
-  </div>
-  <div class="col-6">
-    <div class="card h-100 border-0 shadow-sm">
-      <div class="card-body p-3">
-        <div class="d-flex align-items-center mb-2">
-          <div class="rounded-3 p-2 me-3" style="background: rgba(16, 185, 129, 0.1);">
-            <i class="bi bi-check-circle-fill text-success fs-4"></i>
-          </div>
-          <div>
-            <h6 class="text-muted mb-1 small">Active Users</h6>
-            <h4 class="mb-0 fw-bold"><?= $activeUsers ?></h4>
-          </div>
+
+    <!-- ACTIVE USERS -->
+    <div class="col-md-6">
+
+        <div class="modern-stat-card active-card">
+
+            <div class="stat-icon active-icon">
+
+                <i class="bi bi-check-circle-fill"></i>
+
+            </div>
+
+            <div class="stat-content">
+
+                <h6>Active Users</h6>
+
+                <h2><?= $activeUsers ?></h2>
+
+            </div>
+
         </div>
-      </div>
+
     </div>
-  </div>
+
 </div>
 
 <div class="chart-container mb-4">
@@ -927,78 +1583,175 @@ body {
 <?php elseif ($page === 'donations'): ?>
 <!-- ================= DONATIONS VIEW ================= -->
 
-<div class="row g-3 mb-4">
-  <div class="col-lg-4 col-md-12">
-    <div class="card border-0 shadow-sm mb-3">
-      <div class="card-body p-3 text-center">
-        <div class="rounded-3 p-2 mx-auto mb-2" style="background: white; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
-          <i class="bi bi-cash-stack text-success fs-4"></i>
+<div class="row g-4 mb-4">
+
+    <div class="col-lg-4 donation-cards-wrapper">
+
+        <div class="modern-donation-card total-donation-card">
+
+            <div class="donation-icon money-icon">
+
+                <i class="bi bi-cash-stack"></i>
+
+            </div>
+
+            <h6>Total Donation</h6>
+
+            <h2>₱<?= number_format($totalDonation,2) ?></h2>
+
         </div>
-        <h6 class="text-muted mb-1 small">Total Donation</h6>
-        <h4 class="mb-0 fw-bold">₱<?= number_format($totalDonation,2) ?></h4>
-      </div>
-    </div>
-    <div class="card border-0 shadow-sm">
-      <div class="card-body p-3 text-center">
-        <div class="rounded-3 p-2 mx-auto mb-2" style="background: white; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
-          <i class="bi bi-people-fill text-success fs-4"></i>
+
+        <div class="modern-donation-card total-donors-card">
+
+            <div class="donation-icon donor-icon">
+
+                <i class="bi bi-people-fill"></i>
+
+            </div>
+
+            <h6>Total Donors</h6>
+
+            <h2><?= $totalDonors ?></h2>
+
         </div>
-        <h6 class="text-muted mb-1 small">Total Donors</h6>
-        <h4 class="mb-0 fw-bold"><?= $totalDonors ?></h4>
-      </div>
+
     </div>
-  </div>
-  
-  <div class="col-lg-8 col-md-12">
-    <div class="card border-0 shadow-sm h-100">
-      <div class="card-body p-3">
-        <h5 class="mb-3"><i class="bi bi-graph-up me-2 text-primary"></i>Monthly Donation</h5>
-        <div class="d-flex align-items-center justify-content-center h-100">
-          <div class="text-center text-muted">
-            <i class="bi bi-bar-chart-line display-4 mb-3 d-block opacity-25"></i>
-            <p class="mb-1">Chart visualization will be displayed here</p>
-            <small>Track donation patterns over time</small>
-          </div>
+
+    <div class="col-lg-8">
+
+        <div class="modern-chart-card">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+
+                <div class="chart-title">
+
+                    <i class="bi bi-graph-up"></i>
+
+                    Monthly Donation
+
+                </div>
+
+                <select class="form-select"
+                        style="
+                        width: 180px;
+                        border-radius: 14px;
+                        padding: 12px;
+                        ">
+
+                    <option>This Month</option>
+
+                </select>
+
+            </div>
+
+            <div class="chart-placeholder">
+
+                <div class="text-center">
+
+                    <i class="bi bi-bar-chart-line"
+                       style="
+                       font-size: 5rem;
+                       color: rgba(139,92,246,0.25);
+                       "></i>
+
+                    <p class="mt-4 mb-2 fs-4">
+                        Chart visualization will be displayed here
+                    </p>
+
+                    <small class="text-muted fs-6">
+                        Track donation patterns over time
+                    </small>
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
+
     </div>
-  </div>
+
 </div>
 
-<div class="chart-container h-100 d-flex flex-column">
-  <h5 class="mb-3 table-toolbar">
-    <i class="bi bi-list-ul me-2"></i>List of Donors
-  </h5>
-  <div class="table-responsive table-responsive-scrollable">
+<div class="modern-donors-table">
 
-    <table class="table table-hover align-middle">
-      <thead class="table-light">
-        <tr>
-          <th class="text-center">Transaction ID</th>
-          <th class="text-center">Donor Name</th>
-          <th class="text-center">Amount</th>
-          <th class="text-center">Date</th>
-        </tr>
-      </thead>
-      <tbody>
+    <h5>
 
-      <?php while($d=mysqli_fetch_assoc($donations)): ?>
-        <tr>
-          <td class="text-center"><strong>#<?= htmlspecialchars($d['reference'] ?: $d['donation_id']) ?></strong></td>
-          <td class="text-center">
-            <i class="bi bi-person-circle me-2 text-primary"></i>
-            <?= htmlspecialchars($d['donor_name']) ?>
-          </td>
-          <td class="text-center">
-            <strong class="text-success">₱<?= number_format($d['amount'],2) ?></strong>
-          </td>
-          <td class="text-center"><small><?= date('M d, Y - g:i A', strtotime($d['donation_date'])) ?></small></td>
-        </tr>
-      <?php endwhile; ?>
+        <i class="bi bi-list-ul me-2"></i>
 
-      </tbody>
-    </table>
-  </div>
+        List of Donors
+
+    </h5>
+
+    <div class="table-responsive">
+
+        <table class="table align-middle">
+
+            <thead>
+
+                <tr>
+
+                    <th class="text-center">
+                        Transaction ID
+                    </th>
+
+                    <th class="text-center">
+                        Donor Name
+                    </th>
+
+                    <th class="text-center">
+                        Amount
+                    </th>
+
+                    <th class="text-center">
+                        Date
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            <?php while($d=mysqli_fetch_assoc($donations)): ?>
+
+                <tr>
+
+                    <td class="text-center fw-bold">
+
+                        #<?= htmlspecialchars($d['reference'] ?: $d['donation_id']) ?>
+
+                    </td>
+
+                    <td class="text-center">
+
+                        <i class="bi bi-person-circle me-2 text-primary"></i>
+
+                        <?= htmlspecialchars($d['donor_name']) ?>
+
+                    </td>
+
+                    <td class="text-center fw-bold text-success">
+
+                        ₱<?= number_format($d['amount'],2) ?>
+
+                    </td>
+
+                    <td class="text-center">
+
+                        <?= date('M d, Y - g:i A', strtotime($d['donation_date'])) ?>
+
+                    </td>
+
+                </tr>
+
+            <?php endwhile; ?>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
 </div>
 
 <?php endif; ?>
